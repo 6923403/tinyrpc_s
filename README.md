@@ -12,6 +12,6 @@ tinyrpc_s
 git clone -j4 https://github.com/abseil/abseil-cpp.git
 cd abseil-cpp
 mkdir build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=~/usr/local
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
 cmake --build . --target install
 ```

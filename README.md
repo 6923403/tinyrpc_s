@@ -1,6 +1,6 @@
 # tinyrpc_s
 
-tinyrpc_s, 学习https://github.com/Gooddbird/tinyrpc
+tinyrpc_s 练习项目
 
 ---
 
@@ -51,7 +51,7 @@ mkdir /usr/include/tinyxml
 cp *.h /usr/include/tinyxml
 ```
 
-4. tinyrpc
+4. tinyrpc, https://github.com/Gooddbird/tinyrpc
 
 ```
 git clone -j4 https://github.com/Gooddbird/tinyrpc

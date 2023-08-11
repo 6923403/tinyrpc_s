@@ -1,0 +1,55 @@
+syntax = "proto3";
+option cc_generic_services = true;
+
+message queryOrderDetailReq {
+  int32 req_no = 1;         // 请求标识,一般是唯一id
+  string order_id = 2;      // 单号
+}
+
+message queryOrderDetailRsp {
+  int32 ret_code = 1;     // 返回码，0代表响应成功
+  string res_info = 2;    // 返回信息， SUCC 代表成功，否则为失败的具体信息
+  int32 req_no = 3;
+  string order_id = 4;      // 单号
+  string goods_name = 5;    // 货物名称
+  string user_name = 6;     // 用户名称
+}
+
+message makeOrderReq {
+  int32 req_no = 1;
+  string user = 2;
+  string goods_name = 3;    // 货物名称
+  string pay_amount = 4;    // 支付金额
+}
+
+message makeOrderRsp {
+  int32 ret_code = 1;
+  string res_info = 2;
+  int32 req_no = 3;
+  string order_id = 4;      // 订单号
+}
+
+message deleteOrderReq {
+  int32 req_no = 1;         // 请求标识,一般是唯一id
+  string order_id = 2;      // 单号
+}
+
+message deleteOrderRsp {
+  int32 ret_code = 1;
+  string res_info = 2;
+  int32 req_no = 3;
+  string order_id = 4;      // 订单号
+}
+
+
+service OrderService {
+  // 查询订单
+  rpc query_order_detail(queryOrderDetailReq) returns (queryOrderDetailRsp);
+
+  // 生成订单
+  rpc make_order(makeOrderReq) returns (makeOrderRsp);
+
+  // 删除订单
+  rpc delete_order(deleteOrderReq) returns (deleteOrderRsp);
+
+}
